@@ -1,0 +1,144 @@
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.imageContainer{
+  margin: 0px;
+  padding: 0px;
+  background-color: bisque;
+  width: 100%;
+  height: 100%;
+}
+
+.imageContainer img{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.TabsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right:10%;
+  bottom: 42px;
+  width: 80%;
+  font-family: iranyekan;
+  
+}
+.Tabs{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 255, 255);
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-family: iranyekan;
+}
+
+.MainContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.MainContainerHeader{
+  width: 100%;
+  height: 350px;
+  background-color: brown;
+
+}
+
+.MainContainerFooter{
+  width: 80.1%;
+  height: 200px;
+  background-color: white;
+  margin-top: 0px;
+  box-shadow: 1px 1px 3px gray;
+  /* border: 0.5px solid rgb(180, 180, 180); */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+/* .MainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 290px;
+  background-color: aqua;
+
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.AppContainer {
+  width: 80%;
+  height: 280px;
+  position: absolute;
+  top: 290px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  direction: ltr;
+
+}
+
+.HeaderAppContainer {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  height: 35%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background-color: white;
+  border-bottom: 1px solid #d9d9d9;
+
+}
+
+.HeaderAppContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.HeaderAppContainer button {
+  border: none;
+  background-color: white;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: rgb(86, 86, 86);
+}
+
+.searchbox {
+  position: absolute;
+  top: 430px;
+  right: 240px;
+  text-align: center;
+} */

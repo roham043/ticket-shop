@@ -1,0 +1,45 @@
+.container{
+    position: relative;
+    top: 20px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 900px;
+    margin: 0 auto;
+}
+.sidefilter{
+    width: 25%;
+    height: vh100;
+}
+.ticketinfo{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    background-color: rgb(251, 251, 251);
+    width: 100%;
+    height: 100%;
+}
+.datebar{
+
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:auto;
+    
+}
+.subInput{
+    position: absolute;
+    top: 500px;
+    
+}
+.inputdate{
+    padding: 10.5px;
+    text-align:right ;
+   font-size: 12px;
+outline: bisque;
+border-radius: 5px;
+}
