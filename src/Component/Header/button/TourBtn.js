@@ -1,27 +1,32 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Box from "@mui/material/Box";
-import images from '../image';
-import { useDispatch } from 'react-redux';
+import Box from '@mui/material/Box';
+// import { ReactComponent as Expandmore } from '../../../assets/icons/expandmore.svg';
 
-export default function TourBtn() {
-  const dispatch = useDispatch();
 
-  const btnchangecolor = (e) => {
-    const filterImage = images.filter(data => data.title === e.target.name)
-    const filteraddress = filterImage.map(data => { return (data.image) });
-    const filtertitle = filterImage.map(data => { return (data.title) })
-    dispatch({ type:filtertitle[0], payload: filteraddress[0] });
-
-  }
-  return (
-    <div>
-      <Box sx={{ borderLeft: 0.5, borderColor: '#bdbdbd' }}>
-        <Button name="tour" id='4' onClick={btnchangecolor} sx={{ color: "black" }}
-        >
-          تور
-        </Button>
-      </Box>
-    </div>
-  );
+export default function ButtomTour() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+  
+//1px 1px 3px gray -4px -4px 6px #888888
+    return (
+        <div>
+            <Box sx={{boxShadow:'-1px -1px 2px #888888',borderRadius:'3px'}}>
+                <Button 
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                >
+                   
+                    تور
+                </Button>
+            </Box>
+        
+        </div>
+    );
 }
