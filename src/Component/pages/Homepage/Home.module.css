@@ -74,7 +74,20 @@
 }
 
 @media screen and (max-width:800px) {
+ 
   .MainContainerFooter{
     height: auto;
+  }
+}
+@media screen and (max-width:650px) {
+ 
+  .imageContainer{
+    height: 50%;
+  }
+  
+  .Tabs{
+    border-top: 1px solid rgb(200, 200, 200);
+    border-left: 1px solid rgb(200, 200, 200);
+    border-right: 1px solid rgb(200, 200, 200);
   }
 }

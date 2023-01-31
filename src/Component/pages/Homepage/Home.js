@@ -69,7 +69,7 @@ const Container = () => {
 
                     </div>
                     <div className={styles.TabsContainer}>
-                        <Tabs sx={{ color: 'red' }} value={value} onChange={handleChange} className={styles.Tabs} aria-label="icon label tabs example">
+                        <Tabs value={value} onChange={handleChange} className={styles.Tabs} aria-label="icon label tabs example">
                             <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='0' icon={<GiCommercialAirplane />} label="پرواز داخلی"  name="Domesticflight" ></Tab>
                             <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='1' icon={<ImAirplane />} label="پرواز خارجی"  name="internationalflight" ></Tab>
                             <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='2' icon={<IoTrain />} label="قطار"  name="train" />

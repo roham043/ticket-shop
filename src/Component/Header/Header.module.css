@@ -111,7 +111,7 @@
     font-size: x-large;
 }
 
-@media  (max-width:1019px) {
+@media  (max-width:1150px) {
     .buttonContainer{
         display: none;
     }
@@ -133,4 +133,23 @@
     .logoContainer{
         width: 15%;
     }
+}
+@media  (max-width:500px) {
+    .logoContainer{
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+  .logoContainerContent{
+    display: none;
+  }
+  .linkContainer{
+    width: 80%;
+    margin: 0;
+    padding: 0;
+  }
+  .linkContainer div{
+    width: 30%;
+  }
 }
