@@ -1,3 +1,9 @@
+
+@font-face {
+  font-family: 'iranyekan';
+  src: url(./assets/fonts/iranyekan.ttf);
+  
+}
 body {
   margin: 0;
   font-family: iranyekan;
@@ -9,11 +15,6 @@ body {
   
 }
 
-@font-face {
-  font-family: 'iranyekan';
-  src: url(./assets/fonts/iranyekan.ttf);
-  
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
