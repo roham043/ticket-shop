@@ -16,28 +16,28 @@ const Ticket = () => {
   const location = useLocation();
   let data = location.state.datagoticket;
   let data2 = location.state.datagoticket2;
-  let databackticket=location.state.databackticket;
+  let databackticket = location.state.databackticket;
 
   return (
     <>
       <div className="container">
-         {buyTicket&& !buyBackTicket && 
+        {buyTicket && !buyBackTicket &&
           <div className="row">
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtgoticket /></div>
             </div>
-            <div className="col-xl-6 col-lg-12 ">   <div className="rounded-3 border mt-4 shadow-sm text-center align-self-center fs-2 pt-5" style={{ height: "170px", fontFamily: "system-ui" }}> بلیط برگشت</div>
+            <div className="col-xl-6 col-lg-12 ">   <div className="rounded-3 border mt-4 shadow-sm text-center align-self-center fs-2 pt-5" style={{ height: "170px", fontFamily: "iranyekan" }}> بلیط برگشت</div>
             </div>
           </div>
-        } 
+        }
 
-{ buyBackTicket &&
+        {buyBackTicket &&
           <div className="row">
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtgoticket /></div>
             </div>
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtbackticket /></div>
             </div>
           </div>
-        } 
+        }
 
         <div className="row">
           <div className="col-xl-9 order-2">
@@ -53,7 +53,7 @@ const Ticket = () => {
                 )
               })
             }
-            { buyTicket && !poweronCardticketgo && databackticket.map(obj=>{return( <div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 "> <CardTicketback backdata={obj} /> </div>)})}
+            {buyTicket && !poweronCardticketgo && databackticket.map(obj => { return (<div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 "> <CardTicketback backdata={obj} /> </div>) })}
           </div>
           <div className="col-xl-3 order-1">
             <div className={styles.sidefilter}>

@@ -32,11 +32,11 @@ const ButtonTicket = (props) => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <button onClick={props.handleClose} id='0' name='Domesticflight' >پرواز داخلی</button>
+                <button onClick={props.handleClose} id='6' name='Domesticflight' >پرواز داخلی</button>
                 <hr></hr>
-                <button onClick={props.handleClose} id='1' name='internationalflight'>پرواز خارجی</button>
+                <button onClick={props.handleClose} id='5' name='internationalflight'>پرواز خارجی</button>
                 <hr></hr>
-                <button onClick={props.handleClose} id='2' name='train'>قطار</button>
+                <button onClick={props.handleClose} id='4' name='train'>قطار</button>
                 <hr></hr>
                 <button onClick={props.handleClose} id='3' name='bus'>اتوبوس</button>
             </Menu>

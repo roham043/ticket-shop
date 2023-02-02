@@ -31,9 +31,9 @@ const ButtonResidence = (props) => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <button onClick={props.handleClose} id='5' name="hotel">هتل</button>
+                <button onClick={props.handleClose} id='1' name="hotel">هتل</button>
                 <hr></hr>
-                <button onClick={props.handleClose} id='6' name='villa'>ویلا و اقامتگاه</button>
+                <button onClick={props.handleClose} id='0' name='villa'>ویلا و اقامتگاه</button>
             </Menu>
         </div>
     );

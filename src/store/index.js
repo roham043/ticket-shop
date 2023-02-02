@@ -6,6 +6,8 @@ import Domesticflight from "../assets/images/Domesticflight.png";
 
 const initialstate = {
     value: 0,
+    oneWayTicket: false,
+    roundTripTicket: false,
     orgGoticket: "",
     destGoticket: "",
     dateGoticket: "",
@@ -134,6 +136,7 @@ const Reduser = (state = initialstate, action) => {
                 ...state,
                 buyBackTicket: true
             }
+        //--------------- fore change homePage Tabs -------
         case "0":
             return {
                 ...state,
@@ -142,7 +145,7 @@ const Reduser = (state = initialstate, action) => {
         case "1":
             return {
                 ...state,
-                value:1
+                value: 1
             }
         case "2":
             return {
@@ -157,19 +160,19 @@ const Reduser = (state = initialstate, action) => {
         case "4":
             return {
                 ...state,
-                value:4
+                value: 4
             }
         case "5":
             return {
                 ...state,
-                value:5
+                value: 5
             }
         case "6":
             return {
                 ...state,
-                value:6
+                value: 6
             }
-
+        //--------------------- fore change image background homePage ----------
         case 'Domesticflight':
             return {
                 ...state,
@@ -185,7 +188,7 @@ const Reduser = (state = initialstate, action) => {
         case 'internationalflight':
             return {
                 ...state,
-            
+
                 imgBackground: action.payload,
                 btnChangeColorD: false,
                 btnChangeColorI: true,
@@ -198,7 +201,7 @@ const Reduser = (state = initialstate, action) => {
         case 'train':
             return {
                 ...state,
-               
+
                 imgBackground: action.payload,
                 btnChangeColorD: false,
                 btnChangeColorI: false,
@@ -255,6 +258,19 @@ const Reduser = (state = initialstate, action) => {
                 btnChangeColorTo: false,
                 btnChangeColorH: false,
                 btnChangeColorV: true
+            }
+        //---------------------- fore buy one-way ticket--------
+        case 'oneWay':
+            return {
+                ...state,
+                oneWayTicket: !state.oneWayTicket,
+                
+            }
+        case 'roundTrip':
+            return {
+                ...state,
+                roundTripTicket: !state.roundTripTicket,
+               
             }
         default:
             return state

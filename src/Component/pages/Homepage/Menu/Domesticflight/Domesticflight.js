@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import {useDispatch,useSelector} from 'react-redux';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker from '@hassanmojab/react-modern-calendar-datepicker';
 import classes from "./Domesticflight.module.css";
@@ -21,6 +22,10 @@ const Domesticflight = (props) => {
     const [selectedDaygo, setSelectedDaygo] = useState(null);
     const [origin, setOrigin] = useState("");
     const [destination, setDestination] = useState("");
+
+    const dispatch = useDispatch();
+    const ticketOneWay = useSelector(state => state.oneWayTicket)
+    const ticketRoundTrip = useSelector(state => state.roundTripTicket)
 
     const navigate = useNavigate();
     const minimumDate = {
@@ -60,14 +65,22 @@ const Domesticflight = (props) => {
     const destHandler = (e) => {
         setDestination(e.target.value);
     }
+    const handleSelect= (e) =>{
+        dispatch({type:e.target.name})
+        console.log(`ticketOneWay:${ticketOneWay}`)
+        console.log(`ticketRoundTrip:${ticketRoundTrip}`)
+
+    }
 
     return (
         <div className={classes.container}>
             <div className={classes.header}>
-                <select >
+                <select>
                     <option>یک طرفه</option>
                     <option> رفت و برگشت</option>
                 </select>
+                <button name="oneWay" onClick={handleSelect}>یک طرفه</button>
+                <button name="roundTrip" onClick={handleSelect}>رفت و برگشت</button>
             </div>
             <div className={classes.footer}>
                 <FormControl className={classes.formControl1} >

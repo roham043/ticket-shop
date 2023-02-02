@@ -1,9 +1,7 @@
-
-
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Home.module.css';
-import Domestic from "../Homepage/Menu/Domesticflight/Domesticflight";
+import Domestic from "./Menu/Domesticflight/Domesticflight";
 import Domesticflight from '../../../assets/images/Domesticflight.png';
 import internationalflight from '../../../assets/images/internationalflight.png';
 import train from '../../../assets/images/train.png';
@@ -18,7 +16,7 @@ import villa from '../../../assets/images/villa.png';
 // import Luggage from '@mui/icons-material/Luggage';
 // import Apartment from '@mui/icons-material/Apartment';
 // import Villa from '@mui/icons-material/Villa';
-import Tabs from '@mui/material/Tabs';
+import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { GiCommercialAirplane } from "react-icons/gi";
 import { ImAirplane } from "react-icons/im";
@@ -45,7 +43,12 @@ const Container = () => {
     /*const [value, setValue] = React.useState(0);*/
     const dispatch = useDispatch()
     //--------------------------------------------
-  
+    const handleClick = (e) => {
+        const filterImage = images.filter(data => data.title === e.target.name)
+        const filteraddress = filterImage.map(data => { return (data.image) });
+        const filterTitle = filterImage.map(data => { return (data.title) })
+        dispatch({ type: filterTitle[0], payload: filteraddress[0] });
+    }
     //----------------------------------------------
     const handleChange = (e, newValue) => {
         // setValue(newValue);
@@ -68,19 +71,74 @@ const Container = () => {
                         <img src={imgBackground} alt={1}></img>
 
                     </div>
+                    {/*------------- for mobile resolution ------------*/}
+                    <div className={styles.mobileTabsContainer}>
+                        <div className={styles.row}>
+                            <button className={styles.col1} onClick={handleClick} name="Domesticflight" >
+                                <GiCommercialAirplane className={styles.iconH3} style={{ fontSize: '18px' }} />
+                                پرواز داخلی
+                            </button>
+                            <button className={styles.col2} onClick={handleClick} name="internationalflight" >
+                                <ImAirplane className={styles.iconH3} style={{ fontSize: '18px' }} />
+                                پرواز خارجی
+                            </button>
+                        </div>
+                        <div className={styles.row}>
+                            <button className={styles.col3} onClick={handleClick} name="train">
+                                <IoTrain className={styles.iconH3} style={{ fontSize: '18px' }} />
+                                قطار
+                            </button>
+                            <button className={styles.col4} onClick={handleClick} name="bus">
+                                <FaBusAlt className={styles.iconH3} style={{ fontSize: '18px' }} />
+                                اتوبوس
+                            </button>
+                        </div>
+                        <div className={styles.row}>
+                            <button className={styles.col5} onClick={handleClick} name="tour">
+                                <MdLuggage className={styles.iconH3} style={{ fontSize: '18px' }} />
+                                تور
+                            </button>
+                            <button className={styles.col6} onClick={handleClick} name="hotel">
+                                <FaHotel className={styles.iconH3} style={{ fontSize: '18px' }} />
+                                هتل
+                            </button>
+                        </div>
+                        <div className={styles.row}>
+                            <button className={styles.lastCol} onClick={handleClick} name="villa">
+                                <GiVillage className={styles.iconH3} style={{ fontSize: '32px' }} />
+                                ویلا و اقامتگاه
+                            </button>
+                        </div>
+
+                    </div>
+                    {/* ----------------------------------------------------------------- */}
                     <div className={styles.TabsContainer}>
-                        <Tabs value={value} onChange={handleChange} className={styles.Tabs} aria-label="icon label tabs example">
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='0' icon={<GiCommercialAirplane />} label="پرواز داخلی"  name="Domesticflight" ></Tab>
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='1' icon={<ImAirplane />} label="پرواز خارجی"  name="internationalflight" ></Tab>
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='2' icon={<IoTrain />} label="قطار"  name="train" />
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='3' icon={<FaBusAlt />} label="اتوبوس" name="bus" />
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='4' icon={<MdLuggage />} label="تور"  name="tour" />
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='5' icon={<FaHotel />} label="هتل"  name="hotel" />
-                            <Tab sx={{ fontSize: '18px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan' }} id='6' icon={<GiVillage />} label="ویلا و اقامتگاه"  name="villa" />
+                        <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons className={styles.Tabs} aria-label="visible arrows tabs example"
+                            sx={{
+                                [`& .${tabsClasses.scrollButtons}`]: {
+                                    '&.Mui-disabled': { opacity: 0.3 },
+                                }, direction: 'ltr'
+                            }}
+                        >
+                            
+               
+                            
+                   
+                   
+  
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='0' icon={<GiVillage />} label="ویلا و اقامتگاه" name="villa" />
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='1' icon={<FaHotel />} label="هتل" name="hotel" />
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='2' icon={<MdLuggage />} label="تور" name="tour" />
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='3' icon={<FaBusAlt />} label="اتوبوس" name="bus" />
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='4' icon={<IoTrain />} label="قطار" name="train" />
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='5' icon={<ImAirplane />} label="پرواز خارجی" name="internationalflight" ></Tab>
+                            <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='6' icon={<GiCommercialAirplane />} label="پرواز داخلی" name="Domesticflight" ></Tab>
+                            
                         </Tabs>
+
                     </div>
                 </div>
-                
+
             </div>
             <div className={styles.MainContainerFooter}>
                 <Domestic />
