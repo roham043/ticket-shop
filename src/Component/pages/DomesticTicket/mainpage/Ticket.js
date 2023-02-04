@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Boughtgoticket from "../child/BoughtgoTicket";
 import Boughtbackticket from "../child/BoughtbackTicket ";
+import Identification from "../child/Identification";
 
 import CardTicketback from "../child/CardTicketback";
 const Ticket = () => {
@@ -16,28 +17,32 @@ const Ticket = () => {
   const location = useLocation();
   let data = location.state.datagoticket;
   let data2 = location.state.datagoticket2;
-  let databackticket=location.state.databackticket;
+  let databackticket = location.state.databackticket;
 
   return (
     <>
       <div className="container">
-         {buyTicket&& !buyBackTicket && 
+        {buyTicket && !buyBackTicket &&
           <div className="row">
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtgoticket /></div>
             </div>
             <div className="col-xl-6 col-lg-12 ">   <div className="rounded-3 border mt-4 shadow-sm text-center align-self-center fs-2 pt-5" style={{ height: "170px", fontFamily: "system-ui" }}> بلیط برگشت</div>
             </div>
           </div>
-        } 
+        }
 
-{ buyBackTicket &&
+        {/* {buyBackTicket &&
           <div className="row">
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtgoticket /></div>
             </div>
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtbackticket /></div>
             </div>
           </div>
-        } 
+        }
+        {buyBackTicket && <div className="row  ">
+          <Identification />
+        </div>} */}
+
 
         <div className="row">
           <div className="col-xl-9 order-2">
@@ -53,14 +58,16 @@ const Ticket = () => {
                 )
               })
             }
-            { buyTicket && !poweronCardticketgo && databackticket.map(obj=>{return( <div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 "> <CardTicketback backdata={obj} /> </div>)})}
+            {buyTicket && !poweronCardticketgo && databackticket.map(obj => { return (<div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 "> <CardTicketback backdata={obj} /> </div>) })}
           </div>
           <div className="col-xl-3 order-1">
             <div className={styles.sidefilter}>
               <SimpleAccordion data={data} />
             </div>
           </div>
+         
         </div>
+       
       </div>
 
     </>

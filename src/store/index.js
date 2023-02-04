@@ -5,6 +5,7 @@ import Domesticflight from "../assets/images/Domesticflight.png";
 
 
 const initialstate = {
+    isAddpassenger:false,
     value: 0,
     orgGoticket: "",
     destGoticket: "",
@@ -255,6 +256,11 @@ const Reduser = (state = initialstate, action) => {
                 btnChangeColorTo: false,
                 btnChangeColorH: false,
                 btnChangeColorV: true
+            }
+            case 'isAddpassenger':
+            return {
+                ...state,
+                isAddpassenger: true
             }
         default:
             return state
