@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Boughtgoticket from "../child/BoughtgoTicket";
 import Boughtbackticket from "../child/BoughtbackTicket ";
+import Identification from "../child/Identification";
 
 import CardTicketback from "../child/CardTicketback";
 const Ticket = () => {
@@ -30,7 +31,11 @@ const Ticket = () => {
           </div>
         }
 
+<<<<<<< HEAD
         {buyBackTicket &&
+=======
+        {/* {buyBackTicket &&
+>>>>>>> dev
           <div className="row">
             <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtgoticket /></div>
             </div>
@@ -38,6 +43,13 @@ const Ticket = () => {
             </div>
           </div>
         }
+<<<<<<< HEAD
+=======
+        {buyBackTicket && <div className="row  ">
+          <Identification />
+        </div>} */}
+
+>>>>>>> dev
 
         <div className="row">
           <div className="col-xl-9 order-2">
@@ -60,7 +72,9 @@ const Ticket = () => {
               <SimpleAccordion data={data} />
             </div>
           </div>
+         
         </div>
+       
       </div>
 
     </>

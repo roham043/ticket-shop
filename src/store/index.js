@@ -5,6 +5,7 @@ import Domesticflight from "../assets/images/Domesticflight.png";
 
 
 const initialstate = {
+    isAddpassenger: false,
     value: 0,
     oneWayTicket: false,
     roundTripTicket: false,
@@ -259,18 +260,11 @@ const Reduser = (state = initialstate, action) => {
                 btnChangeColorH: false,
                 btnChangeColorV: true
             }
-        //---------------------- fore buy one-way ticket--------
-        case 'oneWay':
+        case 'isAddpassenger':
             return {
                 ...state,
-                oneWayTicket: !state.oneWayTicket,
-                
-            }
-        case 'roundTrip':
-            return {
-                ...state,
-                roundTripTicket: !state.roundTripTicket,
-               
+                isAddpassenger: true
+
             }
         default:
             return state
