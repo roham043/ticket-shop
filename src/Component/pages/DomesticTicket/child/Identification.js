@@ -3,7 +3,7 @@ import { BsPeopleFill } from "react-icons/bs";
 import month from "./packages/monthpackage";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import IdentificationAddedPassengers from "./IdentificationAddedPassengers";
+import IdentificationAddedPassengers from "./CardSpecificationsOfPassengers";
 
 
 const Identification = () => {

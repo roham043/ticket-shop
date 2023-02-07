@@ -4,6 +4,9 @@ import Boughtbackticket from "../child/BoughtbackTicket ";
 import Boughtgoticket from "../child/BoughtgoTicket";
 import Identification from "../child/Identification";
 import StepperPassengers from '../child/Stepper';
+import CardSpecificationsOfPassengers from '../child/CardSpecificationsOfPassengers';
+import { BsFillPeopleFill } from "react-icons/bs";
+
 const DomesticFlightPassengersPage = () => {
     // const buyBackTicket = useSelector(state => state.buyBackTicket);
 
@@ -32,9 +35,12 @@ const DomesticFlightPassengersPage = () => {
                     </div>
                 </div>
                 <div className={styles.passengersInfo}>
-                    <div className="container ">
-                        <Identification />
+                    <div className={styles.passengersInfoHeader}>
+                        <div className={styles.verticalLine}></div>
+                        <BsFillPeopleFill className={styles.iconPassengersInfo}/>
+                        <h2 style={{fontFamily:'iranyekan',marginRight:'20px'}}>مشخصات مسافران</h2>
                     </div>
+                    <CardSpecificationsOfPassengers />
                 </div>
                 <div className={styles.sendEmail}>
                     <div className="container border rounded-3 fs-5" >
