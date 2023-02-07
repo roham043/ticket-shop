@@ -7,8 +7,8 @@ import IdentificationAddedPassengers from "./IdentificationAddedPassengers";
 
 
 const Identification = () => {
-    const dispatch=useDispatch();
-    const isAddpassenger=useSelector(state=>state.isAddpassenger)
+    const dispatch = useDispatch();
+    const isAddpassenger = useSelector(state => state.isAddpassenger)
     const date = [];
     for (let i = 1; i < 32; i++) {
         date.push(i);
@@ -18,8 +18,8 @@ const Identification = () => {
         year.push(j);
     }
 
-    const addpassengerForm=()=>{
-       dispatch({type:"isAddpassenger"}) 
+    const addpassengerForm = () => {
+        dispatch({ type: "isAddpassenger" })
     }
     return (
         <div className="row border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1" style={{ fontFamily: "iranYekan" }}>
@@ -101,9 +101,28 @@ const Identification = () => {
                         </div>
                     </div>
                 </div>
-               
-            <div className="ro g-3">{isAddpassenger &&<div className="col-12 "> <hr className="mt-5 mb-5" /><IdentificationAddedPassengers/></div>}</div>
-                <div className="row g-3"><div className="col-12"><hr /></div><div className="col-md-5"><button className="btn btn-outline-primary fs-4" onClick={addpassengerForm}>  + اضافه کردن مسافر جدید</button></div></div>
+
+                <div className="ro g-3">
+                    {
+                        isAddpassenger &&
+                        <div className="col-12 ">
+                            <hr className="mt-5 mb-5" />
+                            <IdentificationAddedPassengers />
+                        </div>
+                    }
+                </div>
+
+                <div className="row g-3">
+                    <div className="col-12">
+                        <hr />
+                    </div>
+                    <div className="col-md-5">
+                        <button className="btn btn-outline-primary fs-4"
+                            onClick={addpassengerForm}>
+                            + اضافه کردن مسافر جدید
+                        </button>
+                    </div>
+                </div>
 
             </form>
         </div >)
