@@ -35,12 +35,24 @@ const DomesticFlightPassengersPage = () => {
                     </div>
                 </div>
                 <div className={styles.passengersInfo}>
+
                     <div className={styles.passengersInfoHeader}>
                         <div className={styles.verticalLine}></div>
-                        <BsFillPeopleFill className={styles.iconPassengersInfo}/>
-                        <h2 style={{fontFamily:'iranyekan',marginRight:'20px'}}>مشخصات مسافران</h2>
+                        <BsFillPeopleFill className={styles.iconPassengersInfo} />
+                        <h2 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>مشخصات مسافران</h2>
                     </div>
                     <CardSpecificationsOfPassengers />
+                    <div className={styles.passengersInfoFooter}>
+                        <div className="col-12 ">
+                            <hr/>
+                        </div>
+                        <div className="col-md-5 px-5 pt-3">
+                            <button className="btn btn-outline-primary fs-4"
+                                >
+                                + اضافه کردن مسافر جدید
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.sendEmail}>
                     <div className="container border rounded-3 fs-5" >

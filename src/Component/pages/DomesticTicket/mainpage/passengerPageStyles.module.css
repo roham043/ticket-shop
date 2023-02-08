@@ -41,6 +41,10 @@
     flex-direction: row;
     
 }
+.passengersInfoFooter{
+    width: 100%;
+    height: 100px;
+}
 .verticalLine{
     width: 5px;
     height: 70%;
