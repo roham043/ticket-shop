@@ -1,4 +1,5 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom';
 import styles from './passengerPageStyles.module.css'
 import Boughtbackticket from "../child/BoughtbackTicket ";
 import Boughtgoticket from "../child/BoughtgoTicket";
@@ -7,7 +8,11 @@ import CardSpecificationsOfPassengers from '../child/CardSpecificationsOfPasseng
 import { BsFillPeopleFill } from "react-icons/bs";
 
 const DomesticFlightPassengersPage = () => {
-    // const buyBackTicket = useSelector(state => state.buyBackTicket);
+    const navigate = useNavigate();
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        navigate('/flight/confirm')
+    }
 
     return (
         <>
@@ -68,6 +73,7 @@ const DomesticFlightPassengersPage = () => {
                 <div className={styles.buttonContainer}>
                     <div className="container-fluid mt-5">
                         <form className="row ps-5 pt-4 pb-5 border fs-5 "
+                            onSubmit={handleSubmit}
                             style={{ fontFamily: "iranYekan" }}>
                             <div className="col-xl-7 col-12 mt-3 mb-5" >
                                 با کلیک روی تایید و ادامه خرید با
