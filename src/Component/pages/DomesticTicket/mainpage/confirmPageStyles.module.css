@@ -1,0 +1,59 @@
+.container{
+    width: 100%;
+    height: auto;
+    background-color:#f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+.stepper{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 0;
+}
+.ticketInformation{
+    width: 70%;
+    height: 600px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+
+}
+.specificationOfPassengers{
+    width: 70%;
+    height: 250px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+}
+.travelMessage{
+    width: 70%;
+    height: 200px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+}
+.discountCode{
+    width: 70%;
+    height: 200px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;  
+}
+.onlinePayment{
+    width: 70%;
+    height: 200px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+}

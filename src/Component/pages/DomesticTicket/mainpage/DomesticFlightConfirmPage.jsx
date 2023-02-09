@@ -2,8 +2,13 @@ import styles from './confirmPageStyles.module.css';
 
 const DomesticFlightConfirmPage = () =>{
     return(
-        <div>
-            <h1>Confirm Page</h1>
+        <div className={styles.container}>
+            <div className={styles.stepper}></div>
+            <div className={styles.ticketInformation}></div>
+            <div className={styles.specificationOfPassengers}></div>
+            <div className={styles.travelMessage}></div>
+            <div className={styles.discountCode}></div>
+            <div className={styles.onlinePayment}></div>
         </div>
     )
 }
