@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import styles from './passengerPageStyles.module.css'
 import Boughtbackticket from "../child/BoughtbackTicket ";
 import Boughtgoticket from "../child/BoughtgoTicket";
-import StepperPassengers from '../child/Stepper';
+import StepperPassengers from '../child/Steppers/PassengersStepper';
 import CardSpecificationsOfPassengers from '../child/CardSpecificationsOfPassengers';
 import { BsFillPeopleFill } from "react-icons/bs";
 

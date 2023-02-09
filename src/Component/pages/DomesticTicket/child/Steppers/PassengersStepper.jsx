@@ -1,21 +1,19 @@
-import styles from './Stepper.Styles.module.css';
-import { HiOutlineTicket } from "react-icons/hi";
+import styles from './PassengersStyles.module.css';
 import { BsFillPeopleFill } from "react-icons/bs";
 import { MdOutlineConfirmationNumber } from "react-icons/md";
 import { MdPayment } from "react-icons/md";
 import { MdAirplaneTicket } from "react-icons/md";
-// import stepper from '../../../../assets/images/stepper-passengers.png';
+import { TiTick } from "react-icons/ti";
+
 
 const StepperPassengers = () => {
   return (
-    // <div className={styles.container}>
-    //     <img src={stepper} alt='stepper'></img>
-    // </div>
+   
     //------------------ use icone and header ----------------------
     <div className={styles.mainContainer}>
       <div className={styles.topContainer}>
         <div>
-          <h2 className={styles.firstH2}><HiOutlineTicket className={styles.firstIcon} /></h2>
+          <h2 className={styles.firstH2}><TiTick className={styles.firstIcon} /></h2>
           <hr className={styles.firstHr}></hr>
         </div>
 
