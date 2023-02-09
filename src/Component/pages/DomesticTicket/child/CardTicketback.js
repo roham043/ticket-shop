@@ -16,7 +16,7 @@ const CardTicketback = (props) => {
         dispatch({ type: "costBackticket", payload: props.backdata.cost });
         dispatch({ type: "BackDate", payload: props.backdata.Date });
         dispatch({ type: "buyBackTicket" });
-        navigate('/IdentificationBothTicket');
+        navigate('/flight/passengers');
     }
 
 

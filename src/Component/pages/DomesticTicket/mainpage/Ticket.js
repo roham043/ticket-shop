@@ -6,10 +6,8 @@ import ScrollableTabsButtonAuto from '../child/scrollabletabs';
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Boughtgoticket from "../child/BoughtgoTicket";
-import Boughtbackticket from "../child/BoughtbackTicket ";
-import Identification from "../child/Identification";
-
 import CardTicketback from "../child/CardTicketback";
+
 const Ticket = () => {
   const buyTicket = useSelector(state => state.buyTicket);
   const poweronCardticketgo = useSelector(state => state.poweronCardticketgo);

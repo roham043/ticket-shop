@@ -2,7 +2,6 @@ import React from "react";
 import styles from './passengerPageStyles.module.css'
 import Boughtbackticket from "../child/BoughtbackTicket ";
 import Boughtgoticket from "../child/BoughtgoTicket";
-import Identification from "../child/Identification";
 import StepperPassengers from '../child/Stepper';
 import CardSpecificationsOfPassengers from '../child/CardSpecificationsOfPassengers';
 import { BsFillPeopleFill } from "react-icons/bs";

@@ -13,9 +13,9 @@ class Router extends React.Component {
             <div>
                 <Header />
                 <Routes>
-                    <Route exact path="/IdentificationBothTicket" element={<DomesticFlightPassengersPage />} />
+                    <Route exact path="/flight/passengers" element={<DomesticFlightPassengersPage />} />
                     <Route exact path="/" element={<App />} />
-                    <Route path="ticket" element={<Ticket />} />
+                    <Route path="flight" element={<Ticket />} />
 
 
                 </Routes>

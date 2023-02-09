@@ -47,7 +47,7 @@ const Domesticflight = (props) => {
         const filteredsamplebackticket = sample.filter(data => data.org === destination && data.dest === origin && data.goDate === backtime);
 
         navigate(
-            '/ticket',
+            '/flight',
             { state: { datagoticket: filteredsamplegoticket, datagoticket2: filteredsamplegoticket2, databackticket: filteredsamplebackticket } }
         )
     }
