@@ -1,7 +1,10 @@
 import styles from './confirmPageStyles.module.css';
 import ConfirmpageStepper from '../child/Steppers/ConfirmpageStepper';
-import CardTicketInformation from '../child/CardTicketInformationTable';
+import CardTicketInformation from '../child/Confirm-Page/CardTicketInformationTable';
+import CardConfirmPageSpecificationPassengers from '../child/Confirm-Page/CardConfirmPageSpecificationPassengers';
 import { HiTicket } from "react-icons/hi2";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { TfiPencil } from "react-icons/tfi";
 
 
 const DomesticFlightConfirmPage = () => {
@@ -33,7 +36,18 @@ const DomesticFlightConfirmPage = () => {
                 </div>
 
             </div>
-            <div className={styles.specificationOfPassengers}></div>
+            <div className={styles.specificationOfPassengers}>
+                  <div className={styles.specificationHeader}>
+                    <BsFillPeopleFill className={styles.specificationHeaderIcon}/>
+                    <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>مشخصات مسافران</h3>
+                    <div className={styles.specificationHeaderButton}>
+                        <TfiPencil/>
+                        <h6>ویرایش مسافران</h6>
+                    </div>
+                  </div>
+                  <CardConfirmPageSpecificationPassengers/>
+            </div>
+
             <div className={styles.travelMessage}></div>
             <div className={styles.discountCode}></div>
             <div className={styles.onlinePayment}></div>
