@@ -39,23 +39,23 @@ const ConfirmpageStepper = () => {
       <div className={styles.bottomContainer}>
 
         <div className={styles.firstDiv}>
-          <h5 className={styles.firstH5}>انتخاب پرواز</h5>
+          <h6 className={styles.firstH5}>انتخاب پرواز</h6>
         </div>
 
         <div className="div">
-          <h5 className={styles.secondH5}>مشخصات مسافران</h5>
+          <h6 className={styles.secondH5}>مشخصات مسافران</h6>
         </div>
 
         <div className="div">
-          <h5 className={styles.thirdH5}>تایید اطلاعات</h5>
+          <h6 className={styles.thirdH5}>تایید اطلاعات</h6>
         </div>
 
         <div className="div">
-          <h5 className={styles.fourthH5}>پرداخت</h5>
+          <h6 className={styles.fourthH5}>پرداخت</h6>
         </div>
 
         <div className="div">
-          <h5 className={styles.fifthH5}>صدور بلیط</h5>
+          <h6 className={styles.fifthH5}>صدور بلیط</h6>
         </div>
 
       </div>
