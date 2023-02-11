@@ -22,9 +22,15 @@ const Ticket = () => {
       <div className="container">
         {buyTicket && !buyBackTicket &&
           <div className="row">
-            <div className="col-xl-6 col-lg-12 " >  <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}><Boughtgoticket /></div>
+            <div className="col-xl-6 col-lg-12 " >
+              <div className=" rounded-3 border  mt-4 shadow-sm " style={{ height: "170px" }}>
+                <Boughtgoticket />
+              </div>
             </div>
-            <div className="col-xl-6 col-lg-12 ">   <div className="rounded-3 border mt-4 shadow-sm text-center align-self-center fs-2 pt-5" style={{ height: "170px", fontFamily: "iranyekan" }}> بلیط برگشت</div>
+            <div className="col-xl-6 col-lg-12 ">
+              <div className="rounded-3 border mt-4 shadow-sm text-center align-self-center fs-2 pt-5" style={{ height: "170px", fontFamily: "iranyekan" }}>
+                بلیط برگشت
+              </div>
             </div>
           </div>
         }
@@ -40,11 +46,20 @@ const Ticket = () => {
               data.map(obj => {
                 return (
 
-                  <div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 "> <CardTicketgo data={obj} /> </div>
+                  <div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 ">
+                    <CardTicketgo data={obj} />
+                  </div>
                 )
               })
             }
-            {buyTicket && !poweronCardticketgo && databackticket.map(obj => { return (<div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 "> <CardTicketback backdata={obj} /> </div>) })}
+            {buyTicket && !poweronCardticketgo && databackticket.map(
+              obj => {
+                return (
+                  <div className="row  border bg-light shadow-sm  bg-body rounded-3 mt-1 mb-1 ">
+                    <CardTicketback backdata={obj} />
+                  </div>
+                )
+              })}
           </div>
           <div className="col-xl-3 order-1">
             <div className={styles.sidefilter}>

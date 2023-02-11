@@ -1,6 +1,6 @@
 import styles from './confirmPageStyles.module.css';
 import ConfirmpageStepper from '../child/Steppers/ConfirmpageStepper';
-import CardTicketInformation from '../child/Confirm-Page/CardTicketInformationTable';
+import CardWentTicketInformation from '../child/Confirm-Page/CardWentTicketInformationTable';
 import CardConfirmPageSpecificationPassengers from '../child/Confirm-Page/CardConfirmPageSpecificationPassengers';
 import { HiTicket } from "react-icons/hi2";
 import { BsFillPeopleFill } from "react-icons/bs";
@@ -25,14 +25,14 @@ const DomesticFlightConfirmPage = () => {
                         <div className={styles.ticketWentHeader}>
                             <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>بلیط رفت</h3>
                         </div>
-                        <CardTicketInformation />
+                        <CardWentTicketInformation />
                     </div>
 
                     <div className={styles.returnTicket}>
                         <div className={styles.returnTicketHeader}>
                             <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>بلیط برگشت</h3>
                         </div>
-                        <CardTicketInformation />
+                        <CardWentTicketInformation />
                     </div>
                 </div>
 

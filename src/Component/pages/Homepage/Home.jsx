@@ -121,11 +121,6 @@ const Container = () => {
                             }}
                         >
                             
-               
-                            
-                   
-                   
-  
                             <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='0' icon={<GiVillage />} label="ویلا و اقامتگاه" name="villa" />
                             <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='1' icon={<FaHotel />} label="هتل" name="hotel" />
                             <Tab sx={{ fontSize: '15px', py: 0, px: 6, m: 1, fontFamily: 'iranyekan', fontWeight: 'bolder' }} id='2' icon={<MdLuggage />} label="تور" name="tour" />

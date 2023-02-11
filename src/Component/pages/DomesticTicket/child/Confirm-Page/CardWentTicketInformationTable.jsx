@@ -1,23 +1,29 @@
+import {useSelector} from 'react-redux';
 import styles from './TicketInformation.module.css';
 
-const CardTicketInformation = () => {
+const CardWentTicketInformation = () => {
+    const origin = useSelector(state => state.orgGoticket);
+    const destination = useSelector(state => state.destGoticket);
+    const airlineName = useSelector(state => state.logonameGoticket);
+    const time = useSelector(state => state.gotimeGoticket);
+    const date = useSelector(state => state.goDate)
     return (
         <table className={styles.table}>
             <tr>
                 <td>مبدا</td>
-                <td>تهران</td>
+                <td>{origin}</td>
             </tr>
             <tr>
                 <td>مقصد</td>
-                <td>مشهد</td>
+                <td>{destination}</td>
             </tr>
             <tr>
                 <td>شرکت هواپیمایی</td>
-                <td>وارش</td>
+                <td>{airlineName}</td>
             </tr>
             <tr>
                 <td>تاریخ و ساعت پرواز</td>
-                <td>یک شنیه 30 بهمن - 09:55</td>
+                <td>{date} - {time}</td>
             </tr>
             <tr>
                 <td>شماره پرواز</td>
@@ -42,4 +48,4 @@ const CardTicketInformation = () => {
         </table>
     )
 }
-export default CardTicketInformation;
+export default CardWentTicketInformation;
