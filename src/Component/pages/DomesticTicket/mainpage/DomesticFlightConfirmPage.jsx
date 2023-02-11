@@ -2,6 +2,7 @@ import styles from './confirmPageStyles.module.css';
 import ConfirmpageStepper from '../child/Steppers/ConfirmpageStepper';
 import CardWentTicketInformation from '../child/Confirm-Page/CardWentTicketInformationTable';
 import CardConfirmPageSpecificationPassengers from '../child/Confirm-Page/CardConfirmPageSpecificationPassengers';
+import CardReturnTicketInformation from '../child/Confirm-Page/CardReturnTicketInformationTable';
 import { HiTicket } from "react-icons/hi2";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { TfiPencil } from "react-icons/tfi";
@@ -32,7 +33,7 @@ const DomesticFlightConfirmPage = () => {
                         <div className={styles.returnTicketHeader}>
                             <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>بلیط برگشت</h3>
                         </div>
-                        <CardWentTicketInformation />
+                        <CardReturnTicketInformation />
                     </div>
                 </div>
 

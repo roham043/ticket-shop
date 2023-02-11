@@ -1,12 +1,12 @@
 import {useSelector} from 'react-redux';
-import styles from './WentTicketInformation.module.css';
+import styles from './ReturnTicket.module.css';
 
-const CardWentTicketInformation = () => {
-    const origin = useSelector(state => state.orgGoticket);
-    const destination = useSelector(state => state.destGoticket);
-    const airlineName = useSelector(state => state.logonameGoticket);
-    const time = useSelector(state => state.gotimeGoticket);
-    const date = useSelector(state => state.goDate)
+const CardReturnTicketInformation = () => {
+    const origin = useSelector(state => state.orgBackticket);
+    const destination = useSelector(state => state.destBackticket);
+    const airlineName = useSelector(state => state.logonameBackticket);
+    const time = useSelector(state => state.gotimeBackticket);
+    const date = useSelector(state => state.BackDate)
     return (
         <table className={styles.table}>
             <tr>
@@ -48,4 +48,4 @@ const CardWentTicketInformation = () => {
         </table>
     )
 }
-export default CardWentTicketInformation;
+export default CardReturnTicketInformation;
