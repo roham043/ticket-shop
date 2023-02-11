@@ -39,13 +39,13 @@ const DomesticFlightConfirmPage = () => {
             </div>
             <div className={styles.specificationOfPassengers}>
                 <div className={styles.specificationHeader}>
-                    <div style={{width:'85%',display:'flex',alignItems:'center'}}>
+                    <div style={{ width: '85%', display: 'flex', alignItems: 'center' }}>
                         <BsFillPeopleFill className={styles.specificationHeaderIcon} />
-                        <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px',marginBottom:'15px' }}>مشخصات مسافران</h3>
+                        <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px', marginBottom: '15px' }}>مشخصات مسافران</h3>
                     </div>
                     <div className={styles.specificationHeaderButton}>
                         <TfiPencil />
-                        <h6 style={{marginTop:'5px'}}>ویرایش مسافران</h6>
+                        <h6 style={{ marginTop: '5px' }}>ویرایش مسافران</h6>
                     </div>
                 </div>
                 <CardConfirmPageSpecificationPassengers />
@@ -63,7 +63,15 @@ const DomesticFlightConfirmPage = () => {
                 <h3 style={{ marginRight: '20px', fontFamily: 'iranyekan' }}>ایمیل :</h3>
             </div>
             <div className={styles.discountCode}></div>
-            <div className={styles.onlinePayment}></div>
+            <div className={styles.onlinePayment}>
+                <div className={styles.onlinePaymentHeader}>
+                    <h2 style={{ marginTop: '10px', fontFamily: 'iranyekan' }}>مبلغ قابل پرداخت</h2>
+                    <h2 style={{ marginBottom: '25px', fontFamily: 'iranyekan',color:'#0077db' }}>8,833,000 ریال</h2>
+                </div>
+                <div className={styles.onlinePaymentFooter}>
+                    <button>پرداخت آنلاین</button>
+                </div>
+            </div>
         </div>
     )
 }
