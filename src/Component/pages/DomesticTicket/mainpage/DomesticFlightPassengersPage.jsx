@@ -41,8 +41,7 @@ const DomesticFlightPassengersPage = () => {
                 <div className={styles.passengersInfo}>
 
                     <div className={styles.passengersInfoHeader}>
-                        <div className={styles.verticalLine}></div>
-                        <BsFillPeopleFill className={styles.iconPassengersInfo} />
+                        <BsFillPeopleFill className={styles.passengersInfoIcon} />
                         <h2 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>مشخصات مسافران</h2>
                     </div>
                     <CardSpecificationsOfPassengers />
@@ -59,7 +58,7 @@ const DomesticFlightPassengersPage = () => {
                     </div>
                 </div>
                 <div className={styles.sendEmail}>
-                    <div className="container border rounded-3 fs-5" >
+                    <div className="container border rounded-3 fs-5 h-100" >
                         <div className="row m-3">
                             <input class="form-check-input col-sm-3 col-1 mt-2"
                                 type="checkbox" />
@@ -71,8 +70,8 @@ const DomesticFlightPassengersPage = () => {
                     </div>
                 </div>
                 <div className={styles.buttonContainer}>
-                    <div className="container-fluid mt-5">
-                        <form className="row ps-5 pt-4 pb-5 border fs-5 "
+                    <div className="container-fluid border rounded-3 h-100">
+                        <form className="row ps-5 pt-4 pb-5 border fs-5  "
                             onSubmit={handleSubmit}
                             style={{ fontFamily: "iranYekan" }}>
                             <div className="col-xl-7 col-12 mt-3 mb-5" >

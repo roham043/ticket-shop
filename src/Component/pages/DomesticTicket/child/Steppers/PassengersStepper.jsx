@@ -3,8 +3,8 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { MdOutlineConfirmationNumber } from "react-icons/md";
 import { MdPayment } from "react-icons/md";
 import { MdAirplaneTicket } from "react-icons/md";
-import { TiTick } from "react-icons/ti";
-
+// import { TiTick } from "react-icons/ti";
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
 
 const StepperPassengers = () => {
   return (
@@ -13,7 +13,7 @@ const StepperPassengers = () => {
     <div className={styles.mainContainer}>
       <div className={styles.topContainer}>
         <div>
-          <h2 className={styles.firstH2}><TiTick className={styles.firstIcon} /></h2>
+          <h2 className={styles.firstH2}><IoCheckmarkDoneCircle className={styles.firstIcon} /></h2>
           <hr className={styles.firstHr}></hr>
         </div>
 
