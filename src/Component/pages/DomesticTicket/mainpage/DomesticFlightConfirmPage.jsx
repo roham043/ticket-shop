@@ -5,7 +5,8 @@ import CardConfirmPageSpecificationPassengers from '../child/Confirm-Page/CardCo
 import { HiTicket } from "react-icons/hi2";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { TfiPencil } from "react-icons/tfi";
-
+import { MdEmail } from "react-icons/md";
+import { BsFillInfoSquareFill } from "react-icons/bs";
 
 const DomesticFlightConfirmPage = () => {
     return (
@@ -37,18 +38,30 @@ const DomesticFlightConfirmPage = () => {
 
             </div>
             <div className={styles.specificationOfPassengers}>
-                  <div className={styles.specificationHeader}>
-                    <BsFillPeopleFill className={styles.specificationHeaderIcon}/>
-                    <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>مشخصات مسافران</h3>
-                    <div className={styles.specificationHeaderButton}>
-                        <TfiPencil/>
-                        <h6>ویرایش مسافران</h6>
+                <div className={styles.specificationHeader}>
+                    <div style={{width:'85%',display:'flex',alignItems:'center'}}>
+                        <BsFillPeopleFill className={styles.specificationHeaderIcon} />
+                        <h3 style={{ fontFamily: 'iranyekan', marginRight: '20px',marginBottom:'15px' }}>مشخصات مسافران</h3>
                     </div>
-                  </div>
-                  <CardConfirmPageSpecificationPassengers/>
+                    <div className={styles.specificationHeaderButton}>
+                        <TfiPencil />
+                        <h6 style={{marginTop:'5px'}}>ویرایش مسافران</h6>
+                    </div>
+                </div>
+                <CardConfirmPageSpecificationPassengers />
             </div>
 
-            <div className={styles.travelMessage}></div>
+            <div className={styles.travelMessage}>
+                <div className={styles.travelMessageHeader}>
+                    <MdEmail className={styles.travelMessageIcon} />
+                    <h6>اطلاع رسانی سفر</h6>
+                </div>
+                <div className={styles.travelMessageInfo}>
+                    <BsFillInfoSquareFill style={{ fontSize: '20px', marginRight: '25px', color: '#c78100' }} />
+                    <h3 style={{ marginRight: '20px', color: '#c78100', fontFamily: 'iranyekan', marginBottom: '20px' }}>اطلاعات بلیط و اطلاع‌رسانی بعدی به این ادرس ارسال می‌شود.</h3>
+                </div>
+                <h3 style={{ marginRight: '20px', fontFamily: 'iranyekan' }}>ایمیل :</h3>
+            </div>
             <div className={styles.discountCode}></div>
             <div className={styles.onlinePayment}></div>
         </div>
