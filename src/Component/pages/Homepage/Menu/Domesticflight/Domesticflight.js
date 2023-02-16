@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router";
+import {useDispatch} from 'react-redux';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 // import DatePicker from '@hassanmojab/react-modern-calendar-datepicker';
 import classes from "./Domesticflight.module.css";
@@ -21,6 +22,7 @@ const Domesticflight = (props) => {
     const [selectedDaygo, setSelectedDaygo] = useState(null);
     const [origin, setOrigin] = useState("");
     const [destination, setDestination] = useState("");
+    
 
     const navigate = useNavigate();
     const minimumDate = {
@@ -39,7 +41,23 @@ const Domesticflight = (props) => {
     // };
 
 
-    const search = () => {
+   
+
+    const orgHandler = (e) => {
+        setOrigin(e.target.value);
+    }
+
+    const destHandler = (e) => {
+        setDestination(e.target.value);
+    }
+    
+    const dispatch = useDispatch();
+    const numOfPasInputRef = useRef();
+    
+
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
         let gotime = `${selectedDaygo.year}/${selectedDaygo.month}/${selectedDaygo.day}`;
         let backtime = `${selectedDayback.year}/${selectedDayback.month}/${selectedDayback.day}`;
         const filteredsamplegoticket = sample.filter(data => data.org === origin && data.dest === destination && data.returnDate === backtime && data.goDate === gotime);
@@ -50,18 +68,17 @@ const Domesticflight = (props) => {
             '/flight',
             { state: { datagoticket: filteredsamplegoticket, datagoticket2: filteredsamplegoticket2, databackticket: filteredsamplebackticket } }
         )
+        //----------------- for get number of passengers -----------
+        const numOfPassInputValue = numOfPasInputRef.current.value;
+        let num = [];
+        for(let i = 0 ; i < numOfPassInputValue ; i++ ){
+            num.push(i);
+          
+        }
+        dispatch({type:e.target.name,payload:num})
+            
     }
-
-    const orgHandler = (e) => {
-        console.log(e.target.value);
-        setOrigin(e.target.value);
-    }
-
-    const destHandler = (e) => {
-        setDestination(e.target.value);
-    }
-
-
+   
     return (
         <div className={classes.container}>
             <div className={classes.header}>
@@ -69,90 +86,102 @@ const Domesticflight = (props) => {
                     <option>یک طرفه</option>
                     <option> رفت و برگشت</option>
                 </select>
- 
-            </div>
-            <div className={classes.footer}>
-                <FormControl className={classes.formControl1} >
-                    <InputLabel sx={{ fontFamily: 'iranyekan' }} id="demo-simple-select-autowidth-label">مبدا</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-autowidth-label"
-                        id="demo-simple-select-autowidth"
-                        value={origin}
-                        onChange={orgHandler}
-                        autoWidth
-                        label="Age"
-                    >
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تهران'} >تهران</MenuItem>
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'مشهد'}>مشهد</MenuItem>
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تبریز'}>تبریز</MenuItem>
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'شیراز'}>شیراز</MenuItem>
-
-                    </Select>
-                </FormControl>
-
-
-                <FormControl className={classes.formControl2} >
-                    <InputLabel sx={{ fontFamily: 'iranyekan' }} id="demo-simple-select-autowidth-label">مقصد</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-autowidth-label"
-                        id="demo-simple-select-autowidth"
-                        value={destination}
-                        onChange={destHandler}
-                        autoWidth
-                        label="Age"
-                    >
-
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تهران'}>تهران</MenuItem>
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'مشهد'}>مشهد</MenuItem>
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تبریز'}>تبریز</MenuItem>
-                        <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'شیراز'}>شیراز</MenuItem>
-
-                    </Select>
-                </FormControl>
-                <div className={classes.dateContainer}>
-                    <DtPicker
-                        value={selectedDaygo}
-                        onChange={setSelectedDaygo}
-                        type='single'
-                        local='fa'
-                        showWeekend
-                        placeholder='تاریخ رفت'
-                        inputClass={classes.dateInput}
-                        autoClose={false}
-                        minDate={minimumDate}
-                        headerClass={classes.dateHeader}
-                        daysClass={classes.daysDatePicker}
-
-
-                    />
-                </div>
-                <div className={classes.dateContainer}>
-                    <DtPicker
-                        value={selectedDayback}
-                        onChange={setSelectedDayback}
-                        type='single'
-                        local='fa'
-                        showWeekend
-                        placeholder='تاریخ برگشت'
-                        inputClass={classes.dateInput}
-                        autoClose={false}
-                        minDate={minimumDate}
-                        headerClass={classes.dateHeader}
-                        daysClass={classes.daysDatePicker}
-
-                    />
-                </div>
-
-
-
-                <input className={classes.numOfPas} type="number" placeholder='تعداد مسافران'  />
-
-                <button onClick={search}
-                    className={classes.searchBtn}>جستجوی بلیط</button>
-
 
             </div>
+            <form onSubmit={handleSubmit} name="numbersOfPassengers">
+                <div className={classes.footer}>
+                    <FormControl className={classes.formControl1} >
+                        <InputLabel sx={{ fontFamily: 'iranyekan' }} id="demo-simple-select-autowidth-label">مبدا</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-autowidth-label"
+                            id="demo-simple-select-autowidth"
+                            value={origin}
+                            onChange={orgHandler}
+                            autoWidth
+                            label="Age"
+                        >
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تهران'} >تهران</MenuItem>
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'مشهد'}>مشهد</MenuItem>
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تبریز'}>تبریز</MenuItem>
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'شیراز'}>شیراز</MenuItem>
 
+                        </Select>
+                    </FormControl>
+
+
+                    <FormControl className={classes.formControl2} >
+                        <InputLabel sx={{ fontFamily: 'iranyekan' }} id="demo-simple-select-autowidth-label">مقصد</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-autowidth-label"
+                            id="demo-simple-select-autowidth"
+                            value={destination}
+                            onChange={destHandler}
+                            autoWidth
+                            label="Age"
+                        >
+
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تهران'}>تهران</MenuItem>
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'مشهد'}>مشهد</MenuItem>
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'تبریز'}>تبریز</MenuItem>
+                            <MenuItem sx={{ fontFamily: 'iranyekan' }} value={'شیراز'}>شیراز</MenuItem>
+
+                        </Select>
+                    </FormControl>
+                    <div className={classes.dateContainer}>
+                        <DtPicker
+                            value={selectedDaygo}
+                            onChange={setSelectedDaygo}
+                            type='single'
+                            local='fa'
+                            showWeekend
+                            placeholder='تاریخ رفت'
+                            inputClass={classes.dateInput}
+                            autoClose={false}
+                            minDate={minimumDate}
+                            headerClass={classes.dateHeader}
+                            daysClass={classes.daysDatePicker}
+
+
+                        />
+                    </div>
+                    <div className={classes.dateContainer}>
+                        <DtPicker
+                            value={selectedDayback}
+                            onChange={setSelectedDayback}
+                            type='single'
+                            local='fa'
+                            showWeekend
+                            placeholder='تاریخ برگشت'
+                            inputClass={classes.dateInput}
+                            autoClose={false}
+                            minDate={minimumDate}
+                            headerClass={classes.dateHeader}
+                            daysClass={classes.daysDatePicker}
+
+                        />
+                    </div>
+
+
+
+                    <input
+                        
+                        ref={numOfPasInputRef}
+                        className={classes.numOfPas}
+                        type="number"
+                        placeholder='تعداد مسافران' />
+
+                    <button
+                        
+                        className={classes.searchBtn}
+                        type="submit"
+                        >
+                        جستجوی بلیط
+                    </button>
+
+
+                </div>
+
+            </form>
 
 
         </div>

@@ -7,6 +7,7 @@ import Domesticflight from "../assets/images/Domesticflight.png";
 const initialstate = {
     isAddpassenger: false,
     value: 0,
+    numbersOfPassengers:[],
     oneWayTicket: false,
     roundTripTicket: false,
     orgGoticket: "",
@@ -266,6 +267,11 @@ const Reduser = (state = initialstate, action) => {
                 isAddpassenger: true
 
             }
+        case 'numbersOfPassengers':
+            return{
+                ...state,
+                numbersOfPassengers:action.payload
+            }    
         default:
             return state
     }

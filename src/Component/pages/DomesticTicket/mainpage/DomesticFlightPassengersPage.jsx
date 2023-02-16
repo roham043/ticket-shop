@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import styles from './passengerPageStyles.module.css'
 import Boughtbackticket from "../child/BoughtbackTicket ";
 import Boughtgoticket from "../child/BoughtgoTicket";
@@ -9,6 +10,7 @@ import { BsFillPeopleFill } from "react-icons/bs";
 
 const DomesticFlightPassengersPage = () => {
     const navigate = useNavigate();
+    const numberPassengers = useSelector(state => state.numbersOfPassengers)
     const handleSubmit = (e) =>{
         e.preventDefault();
         navigate('/flight/confirm')
@@ -44,7 +46,10 @@ const DomesticFlightPassengersPage = () => {
                         <BsFillPeopleFill className={styles.passengersInfoIcon} />
                         <h2 style={{ fontFamily: 'iranyekan', marginRight: '20px' }}>مشخصات مسافران</h2>
                     </div>
-                    <CardSpecificationsOfPassengers />
+                    {
+                        numberPassengers.map(number => <CardSpecificationsOfPassengers />)
+                    }
+                    
                     <div className={styles.passengersInfoFooter}>
                         <div className="col-12 ">
                             <hr/>
