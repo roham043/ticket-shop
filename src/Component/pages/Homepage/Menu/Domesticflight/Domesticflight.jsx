@@ -63,8 +63,7 @@ const Domesticflight = (props) => {
         const filteredsamplegoticket = DomesticFilghtData.filter(data => data.org === origin && data.dest === destination  && data.goDate === gotime);
         const filteredsamplegoticket2 = DomesticFilghtData.filter(data => data.org === origin && data.dest === destination);
         const filteredsamplebackticket = DomesticFilghtData.filter(data => data.org === destination && data.dest === origin && data.goDate === backtime);
-        console.log(filteredsamplegoticket);
-        console.log(selectedDaygo);
+
 
         navigate(
             '/flight',

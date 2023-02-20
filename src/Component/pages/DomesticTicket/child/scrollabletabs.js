@@ -21,7 +21,7 @@ import Box from '@mui/material/Box';
         aria-label="scrollable auto tabs example"
       >{props.data.map(obj=>{return(
 
-        <Tab label={obj.goDate} />
+        <Tab label={obj.goDate} key={obj.id}/>
 
       )
       
