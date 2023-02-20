@@ -7,7 +7,7 @@ import classes from "./Domesticflight.module.css";
 import moment from 'jalali-moment';
 // import Karoon from "../../../../assets/images/Karoon.png";
 // import Kaspian from "../../../../assets/images/Kaspian.png";
-import sample from "./maindata";
+import DomesticFilghtData from "./DomesticFlightData";
 import DtPicker from 'react-calendar-datetime-picker';
 import 'react-calendar-datetime-picker/dist/index.css';
 //---------- material ui import -----------------
@@ -60,9 +60,11 @@ const Domesticflight = (props) => {
         e.preventDefault();
         let gotime = `${selectedDaygo.year}/${selectedDaygo.month}/${selectedDaygo.day}`;
         let backtime = `${selectedDayback.year}/${selectedDayback.month}/${selectedDayback.day}`;
-        const filteredsamplegoticket = sample.filter(data => data.org === origin && data.dest === destination && data.returnDate === backtime && data.goDate === gotime);
-        const filteredsamplegoticket2 = sample.filter(data => data.org === origin && data.dest === destination);
-        const filteredsamplebackticket = sample.filter(data => data.org === destination && data.dest === origin && data.goDate === backtime);
+        const filteredsamplegoticket = DomesticFilghtData.filter(data => data.org === origin && data.dest === destination  && data.goDate === gotime);
+        const filteredsamplegoticket2 = DomesticFilghtData.filter(data => data.org === origin && data.dest === destination);
+        const filteredsamplebackticket = DomesticFilghtData.filter(data => data.org === destination && data.dest === origin && data.goDate === backtime);
+        console.log(filteredsamplegoticket);
+        console.log(selectedDaygo);
 
         navigate(
             '/flight',
