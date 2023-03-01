@@ -86,20 +86,49 @@
     width: 25%;
     cursor: pointer;
 }
+.linkContainer button{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+    cursor: pointer;
+    border: none;
+    font-family: iranyekan;
+    padding: 8px;
+}
+.linkContainer button:hover{
+    box-shadow: -1px -1px 3px #888888; 
+}
 
 .linkContainer p{
     color: #737373;
 }
-
+.modalDiv{
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    transform: translate(-50%,-50%);
+    font-family: iranyekan;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .personIcon{
     box-shadow: -1px -1px 3px #888888;  
     color: #888888;
     font-size: x-large;
     /* 1px 1px 3px */
 }
-.personIcon:hover{
+/* .personIcon:hover{
     color: #ffa500;
-}
+} */
 .ReceiptIcon{
     box-shadow: -1px -1px 3px #888888;
     color: #888888;
